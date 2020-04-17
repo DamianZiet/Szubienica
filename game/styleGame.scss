@@ -1,0 +1,137 @@
+body{
+    font-size: 28px;
+    font-family: 'Roboto Mono', monospace;
+}
+.conteiner{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.statistics{
+    display: flex;
+    justify-content: space-around;
+    p{
+    font-family: 'Lato', sans-serif;
+    }
+}
+.plansza {
+   text-align: center;
+   font-size: 48px;
+   margin-top: 10%;
+} 
+.wisielec{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    h1{
+        background-color: red;
+        letter-spacing: .5px;
+    }
+}
+   .alfabet{
+    width:80%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    padding: 10px;
+    .letter{
+        width: 60px;
+        height: 60px;
+        text-align: center;
+        line-height: 60px;
+        padding: 10px;
+        margin: 10px;
+        border-radius: 12px;
+        background-color: black;
+        color: white;
+        cursor: pointer;
+    }
+}
+.result{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 2;
+    color:red;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 50px;
+}
+@media (orientation:portrait) and (min-width:1024px){
+    .conteiner{
+        max-width: 70vw;
+        height: 100vh;
+        margin: 0 auto;
+        .alfabet{
+           width: auto;
+        }
+    }
+}
+@media (orientation:landscape){
+    .conteiner{
+        height: auto;
+        margin: 0 auto;
+        .plansza {
+            font-size: 21px; 
+            margin-top: 5%;
+        } 
+        .wisielec {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            h1{
+                width: auto;
+                font-size: 36px;
+            }
+        }
+        .alfabet{
+            width: 95%;
+            .letter{
+                width: 30px;
+                height: 30px;
+                line-height: 30px;
+                padding: 5px;
+                margin: 5px;
+            }
+        }
+    }
+}
+@media (orientation:landscape) and (min-width:1024px){
+    .conteiner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) ;
+      max-width: 80vw;
+      display: grid;
+      grid-template-columns: repeat(1, 1);
+      grid-template-rows: repeat(3, 1);
+      max-height: 100vh;
+      grid-gap: 5%;
+        .statistics{
+            grid-column: 1/3;
+            width: 80vw;
+        }
+        .plansza{
+            grid-column: 1/3;
+            grid-row: 2;
+            margin-top: 0%;
+            font-size: 36px;
+        }
+        .wisielec{
+            grid-column: 1/2;
+            grid-row: 3;
+        }
+        .alfabet{
+            grid-column: 2/2;
+            grid-row: 3;
+            width: 35vw;
+        }
+    }
+}
